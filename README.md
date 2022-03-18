@@ -4,7 +4,7 @@
 
 1. styled-components에서 ThemeProvider를 import한다.  
 ```javascript
-import { ThemeProvider } from "tyled-components";
+import { ThemeProvider } from "styled-components";
 ```
 2. `<ThemeProvider>` 컴포넌트를 가장 상위 컴포넌트로  
 ```javascript
@@ -44,4 +44,12 @@ function App() {
         </ThemeProvider>
     </>    
 }
+```
+5. `<ThemeProvider>`로 감싸진 자식 `Component`들은 `<ThemeProvider>`로 전달받은 theme를 props로 전달받아서 사용이 가능.
+```javascript
+const HomePage = styled.div`
+    background: ${ props => props.theme.body};
+                     or
+    background: ${({theme}) => theme.body};
+`
 ```
