@@ -53,10 +53,10 @@ const HomePage = styled.div`
     background: ${({theme}) => theme.body};
 `
 ```
+---
 
 
 
-===
 ## styled-components 에서 animation( keyframe ) 사용하기.
 1. `styled-components - keyframes`연결
 ```javascript
@@ -79,7 +79,7 @@ const Component = styled.div`
     animation: ${rotate} 3s linear infinite;
 `
 ```
-===
+---
 
 
 
@@ -119,6 +119,6 @@ const Main = () => {
     );
 };
 ```
-===
+---
 
 
