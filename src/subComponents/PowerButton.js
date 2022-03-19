@@ -23,8 +23,8 @@ const Power = styled.button`
     z-index: 3;
     transition: 0.3s ease-in-out;
     &:hover {
-        background-color: rgba(0,255,0,0.4);
-        box-shadow: 0 0 8px 6px rgba(0,255,0,0.2);
+        background-color: rgba(249,255,33,0.4);
+        box-shadow: 0 0 8px 6px rgba(249,255,33,0.2);
     }
     &>*:first-child {
         text-decoration:none;
