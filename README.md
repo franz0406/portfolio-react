@@ -1,6 +1,6 @@
 # 리액트 포트폴리오 클론 코딩
 
-### styled-component - ThemeProvider 사용하기  
+## styled-component - ThemeProvider 사용하기  
 
 1. styled-components에서 ThemeProvider를 import한다.  
 ```javascript
@@ -53,3 +53,40 @@ const HomePage = styled.div`
     background: ${({theme}) => theme.body};
 `
 ```
+===
+## styled-components 에서 react-router { NavLink("a" tag) } 연결하기.
+1. `NavLink`를 연결할 컴포넌트를 만든다.
+```javascript
+const Main = () => {
+    return (
+        <Home>
+            <Component>
+                Contact me..
+            </Component>
+        </Home>
+    );
+};
+```
+2. `react-router-dom` 그리고 `styled-components`연결
+```javascript
+import { NavLink } from 'react-router-dom';
+
+const Component = styled(NavLink)`
+    font-size: 2rem;
+    color:#000;
+    text-decoration: none;
+`
+```
+3. 컴포넌트에 `to` 속성으로 링크연결 ( href속성으로 컴파일됨. )
+```javascript
+const Main = () => {
+    return (
+        <Home>
+            <Component to={{pathname:"mailto:url...."}} target="_blank">
+                Contact me..
+            </Component>
+        </Home>
+    );
+};
+```
+===
