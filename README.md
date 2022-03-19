@@ -53,7 +53,36 @@ const HomePage = styled.div`
     background: ${({theme}) => theme.body};
 `
 ```
+
+
+
 ===
+## styled-components 에서 animation( keyframe ) 사용하기.
+1. `styled-components - keyframes`연결
+```javascript
+import styled, { keyframes } from 'styled-components';
+```
+2. keyframes 선언
+```javascript
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`
+```
+3. keyframes 사용
+```javascript
+const Component = styled.div`
+    animation: ${rotate} 3s linear infinite;
+`
+```
+===
+
+
+
 ## styled-components 에서 react-router { NavLink("a" tag) } 연결하기.
 1. `NavLink`를 연결할 컴포넌트를 만든다.
 ```javascript
@@ -70,6 +99,7 @@ const Main = () => {
 2. `react-router-dom` 그리고 `styled-components`연결
 ```javascript
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Component = styled(NavLink)`
     font-size: 2rem;
@@ -77,7 +107,7 @@ const Component = styled(NavLink)`
     text-decoration: none;
 `
 ```
-3. 컴포넌트에 `to` 속성으로 링크연결 ( href속성으로 컴파일됨. )
+3. 컴포넌트 속성으로 `to={{pathname}}`으로 링크연결 ( href속성으로 컴파일됨. )
 ```javascript
 const Main = () => {
     return (
@@ -90,3 +120,5 @@ const Main = () => {
 };
 ```
 ===
+
+
