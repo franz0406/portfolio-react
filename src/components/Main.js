@@ -1,6 +1,8 @@
 import { React, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+// component
+import Intro from './Intro';
 // sub component
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
@@ -19,7 +21,8 @@ const MainContainer = styled.div`
         font-family: 'Karla', sans-serif;
         font-weight: 500;
     }
-`
+`;
+
 const Container = styled.div`
     padding:2rem;
     > a { /* Link tags Common style */
@@ -28,20 +31,22 @@ const Container = styled.div`
         text-decoration: none;
         z-index: 1;
     }
-`
+`;
 
 const BLOG = styled(NavLink)`
     color: #000;
     top: 50%; right: 2rem;
     transform: translate(-15%, -50%) rotate(90deg);
-`
+`;
+
 const WORK = styled(NavLink)`
     color: ${props => props.active === 'false' ? props.theme.body : props.theme.text };
     top: 50%; left: 2rem;
     transform: translate(-15%, -50%) rotate(270deg);
     transition: ${props => props.active === 'false' ? "0.5s" : "0.5s" };
     transition-delay: ${props => props.active === 'false' ? "1s" : "0s" };
-`
+`;
+
 const ABOUT = styled(NavLink)`
     color: ${props => props.active === 'false' ? props.theme.body : props.theme.text };
     bottom: 2rem; left: 25%;
@@ -51,7 +56,7 @@ const ABOUT = styled(NavLink)`
 const SKILLS = styled(NavLink)`
     color: #000;
     bottom: 2rem; right: 25%;
-`
+`;
 
 const rotate = keyframes`
     from {
@@ -60,16 +65,17 @@ const rotate = keyframes`
     to {
         transform: rotate(360deg);
     }
-`
+`;
+
 const Center = styled.button`
     display: flex;
     flex-direction: column;
     align-items: center;
 
     position: absolute;
-    left: ${props => props.active === 'false' ? '85%' : '50%'};
-    top: ${props => props.active === 'false' ? '85%' : '50%'};
-    transform: ${props => props.active === 'false' ? "translate(-50%, -50%) scale(0.7)" : "translate(-50%, -50%) scale(1)"};
+    right: ${props => props.active === 'false' ? '0%' : '50%'};
+    bottom: ${props => props.active === 'false' ? '0%' : '50%'};
+    transform: ${props => props.active === 'false' ? "translate(calc(-0% - 2rem), -0%) scale(0.7)" : "translate(50%, 50%) scale(1)"};
 
     border: none;
     outline: none;
@@ -84,11 +90,12 @@ const Center = styled.button`
         padding-top:1rem;
         font-size: 14px;
         font-weight: 600;
-        opacity: ${props => props.active === 'false' ? "0" : "1"};
+        opacity: ${props => props.active === 'false' ? '0' : '1'};
         transition: opacity 0.3s;
-        transition-delay: ${props => props.active === 'false' ? "0s" : "1s"};
+        transition-delay: ${props => props.active === 'false' ? '0s' : '1s'};
     }
-`
+`;
+
 const BlackSection = styled.div`
     position: absolute;
     top: 0; bottom: 0; right: 50%;
@@ -98,7 +105,7 @@ const BlackSection = styled.div`
     background-color: #000;
     transition: ${props => props.active === 'false' ? "height 1s ease 0.8s" : "height 1s ease 0s"};
     z-index:1;
-`
+`;
 
 
 const Main = () => {
@@ -121,6 +128,7 @@ const Main = () => {
                 <SKILLS to="/skills">SKILLS</SKILLS>
                 <SocialIcons theme={click.toString()}/>
             </Container>
+            {click ? null : <Intro active={click.toString()}/> }
         </MainContainer>
     );
 };
