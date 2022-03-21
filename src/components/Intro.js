@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Box = styled.div`
+const Box = styled(motion.div)`
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
@@ -43,10 +44,16 @@ const BoxContent = styled.div`
     }
 `
 
+
+
 const Intro = () => {
 
     return (
-        <Box>
+        <Box
+            initial={{height:0}}
+            animate={{height:"45vh"}}
+            transition={{ type:'spring', duration:1, delay:1.5}}
+        >
             <BoxContent>
                 <h3>Web Publisher</h3>
                 <p>React Portfolio Website.</p>
