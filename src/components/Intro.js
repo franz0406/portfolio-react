@@ -44,8 +44,6 @@ const BoxContent = styled.div`
     }
 `
 
-
-
 const Intro = () => {
 
     return (
