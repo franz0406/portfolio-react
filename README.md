@@ -120,5 +120,53 @@ const Main = () => {
 };
 ```
 ---
-
-
+# Framer-motion 기초 사용법.
+1. Framer-motion Import
+```javascript
+import { motion } from 'framer-motion';
+```
+2. component에 모션 적용.
+```javascript
+// component에 직접 적용
+const Home = ()=> {
+    return (
+        <motion.Component />        
+    )
+}
+// styled-component에 적용
+const Component = styled(motion.div)``
+const Home = ()=> {
+    return (
+        <Component />        
+    )
+}
+```
+===
+## Framer-motion variants 사용
+1. 사용할 애니메이션 객체 선언.
+```javascript
+const scaleMotion = {
+    scaleUp: { scale: 1.2 },
+    scaleDown: { scale: 0.8 },
+};
+```
+2. component 에 `vatiants` 속성의 값으로 전달
+```javascript
+const Home = ()=> {
+    return (
+        <Component>
+            <motion.span
+                whileHover="scaleUP"
+                whileTap="scaleDown"
+                variants={scaleMotion}>Hello
+            </motion.span>
+            <motion.span
+                whileHover="scaleUP"
+                whileTap="scaleDown"
+                variants={scaleMotion}>World
+            </motion.span>
+        <Component/>        
+    )
+};
+```
+===
