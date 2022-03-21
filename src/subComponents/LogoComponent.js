@@ -13,7 +13,7 @@ const Logo = styled.h1`
 `
 const LogoComponent = ({theme}) => {
     return (
-        <Logo color={theme.toString()}>Portfolio</Logo>
+        <Logo color={theme}>HWANG</Logo>
     );
 };
 

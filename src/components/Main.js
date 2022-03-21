@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 // component
 import Intro from './Intro';
 // sub component
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
-import SocialIcons from '../subComponents/SocialIcons';
 // svg component
 import { YinYang } from './AllSvgs';
 
@@ -33,13 +33,13 @@ const Container = styled.div`
     }
 `;
 
-const BLOG = styled(NavLink)`
+const WORK = styled(NavLink)`
     color: #000;
     top: 50%; right: 2rem;
     transform: translate(-15%, -50%) rotate(90deg);
 `;
 
-const WORK = styled(NavLink)`
+const PORTFOLIO = styled(NavLink)`
     color: ${props => props.active === 'false' ? props.theme.body : props.theme.text };
     top: 50%; left: 2rem;
     transform: translate(-15%, -50%) rotate(270deg);
@@ -107,6 +107,11 @@ const BlackSection = styled.div`
     z-index:1;
 `;
 
+// Framer-motion variants
+const scaleMotion = {
+    scaleUp: { scale: 1.1 },
+    scaleDown: { scale: 0.8 },
+};
 
 const Main = () => {
     const [click, setClick] = useState(false);
@@ -116,17 +121,40 @@ const Main = () => {
         <MainContainer>
             <Container>
                 <PowerButton />
-                <LogoComponent theme={click}/>
+                <LogoComponent theme={click.toString()}/>
                 <BlackSection active={click.toString()} aria-hidden="true"/>
                 <Center active={click.toString()}>
                     <YinYang onClick={()=> handleClick()} width={150} height={150} fill="currentColor"/>
                     <span>Click here..</span>
                 </Center>
-                <BLOG to="/blog">BLOG</BLOG>
-                <WORK to="/work" active={click.toString()}>WORK</WORK>
-                <ABOUT to="/about" active={click.toString()}>ABOUT</ABOUT>
-                <SKILLS to="/skills">SKILLS</SKILLS>
-                <SocialIcons theme={click.toString()}/>
+                <WORK to="/work">
+                    <motion.h3 
+                        whileHover="scaleUp" 
+                        whileTap="scaleDown" 
+                        variants={scaleMotion}>WORK
+                    </motion.h3>
+                </WORK>
+                <PORTFOLIO to="/portfolio" active={click.toString()}>
+                    <motion.h3 
+                        whileHover="scaleUp" 
+                        whileTap="scaleDown" 
+                        variants={scaleMotion}>PORTFOLIO
+                    </motion.h3>
+                </PORTFOLIO>
+                <ABOUT to="/about" active={click.toString()}>
+                    <motion.h3 
+                        whileHover="scaleUp" 
+                        whileTap="scaleDown" 
+                        variants={scaleMotion}>ABOUT
+                    </motion.h3>
+                </ABOUT>
+                <SKILLS to="/skills">
+                    <motion.h3 
+                        whileHover="scaleUp" 
+                        whileTap="scaleDown" 
+                        variants={scaleMotion}>SKILLS
+                    </motion.h3>
+                </SKILLS>
             </Container>
             {click ? null : <Intro active={click.toString()}/> }
         </MainContainer>
