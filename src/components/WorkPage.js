@@ -14,7 +14,6 @@ import work9 from '../assets/Images/work_09.jpg';
 // sub component
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
-import AnchorComponent from '../subComponents/AnchorComponent';
 // component
 import WorkComponent from './WorkComponent';
 // work data
@@ -51,7 +50,6 @@ const BlogPage = () => {
             <Container>
                 <LogoComponent />
                 <PowerButton />
-                <AnchorComponent />
                 <Grid>
                     {Works.map( (work, idx) => {
                         return <WorkComponent key={work.id} work={work} img={imgSrc[idx]}/>
