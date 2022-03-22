@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -9,6 +9,7 @@ import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
 // svg component
 import { YinYang } from './AllSvgs';
+
 
 const MainContainer = styled.div`
     position: relative;
@@ -116,7 +117,11 @@ const scaleMotion = {
 const Main = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
-    
+
+    useEffect(()=>{
+        console.log('%c%s','color: white; background: black; font-size: 14px;','안녕하세요~ (^_^)');
+    }, []);
+
     return (
         <MainContainer>
             <Container>

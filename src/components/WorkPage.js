@@ -2,9 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 // images
 import bg from '../assets/Images/blog_bg.jpg';
+import work1 from '../assets/Images/work_01.jpg';
+import work2 from '../assets/Images/work_02.jpg';
+import work3 from '../assets/Images/work_03.jpg';
+import work4 from '../assets/Images/work_04.jpg';
+import work5 from '../assets/Images/work_05.jpg';
+import work6 from '../assets/Images/work_06.jpg';
+import work7 from '../assets/Images/work_07.jpg';
+import work8 from '../assets/Images/work_08.jpg';
+import work9 from '../assets/Images/work_09.jpg';
 // sub component
 import LogoComponent from '../subComponents/LogoComponent';
 import PowerButton from '../subComponents/PowerButton';
+import AnchorComponent from '../subComponents/AnchorComponent';
+// component
+import WorkComponent from './WorkComponent';
+// work data
+import { Works } from '../data/WorkData';
 
 const MainContainer = styled.section`
     width: 100%;
@@ -20,26 +34,28 @@ const Container = styled.div`
     padding-bottom: 5rem;
     background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`};
 `
-const Grid = styled.div`
-    padding: 10rem 2rem;
+const Grid = styled.ul`
+    padding: 10rem 10vw;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: calc(1rem + 2vw);
     text-align:center;
 `
 
 
 const BlogPage = () => {
+    const imgSrc = [ work1, work2, work3, work4, work5, work6, work7, work8, work9];
+
     return (
         <MainContainer>
             <Container>
                 <LogoComponent />
                 <PowerButton />
+                <AnchorComponent />
                 <Grid>
-                    <h2>Blog</h2>
-                    <h2>Blog</h2>
-                    <h2>Blog</h2>
-                    <h2>Blog</h2>
+                    {Works.map( (work, idx) => {
+                        return <WorkComponent key={work.id} work={work} img={imgSrc[idx]}/>
+                    })}
                 </Grid>
             </Container>
         </MainContainer>

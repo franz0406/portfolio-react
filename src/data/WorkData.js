@@ -1,61 +1,58 @@
-export const Work = [
+export const Works = [
     {
         id:1,
-        name:"Agency Landing Page",
-        description:"It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
-        tags:["react","gsap","styledComponents"],
-        
-        demo:"https://agency-website-eta.vercel.app/",
-        github:"https://github.com/codebucks27/Agency-website"
+        name:"isotope 활용 반응형 필터기능 구현하기",
+        tags:["HTML","CSS","Javascript","Isotope"],
+        link:"https://franz0406.github.io/minimal-portfolio/"
     },
     {
         id:2,
-        name:"Job listing website",
-        description:"A Job listing website build in ReactJS. With searching and filtering functionalities.",
-        tags:["react","sass"],
-        
-        demo:"http://react-job-listing-website.codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/react-job-listing-website"
-        
+        name:"반응형 모바일 웹 사이트",
+        tags:["HTML","CSS","Javascript","Swiper-js"],
+        link:"https://franz0406.github.io/mobile-shop/"
     },
     {
         id:3,
-        name:"Dev.to Clone",
-        description:"A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
-        tags:["react","api","sass"],
-        
-        demo:"http://devto-clone-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/devto-clone"
+        name:"부트스트랩 그리드 활용 반응형 웹 사이트",
+        tags:["HTML","SCSS","Javascript","Waypoint","Bx-Slider"],
+        link:"https://franz0406.github.io/expire-web/"
     },
     {
         id:4,
-        name:"Sidebar Menu",
-        description:"A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-        tags:["react","styledComponents","react-router"],
-        
-        demo:"https://react-sidebar.vercel.app/",
-        github:"https://github.com/codebucks27/react-sidebar"
-       
-    },{
+        name:"Display Grid 활용 다양한 레이아웃 구현하기",
+        tags:["HTML","CSS"],
+        link:"https://franz0406.github.io/grid-layout/"
+    },
+    {
         id:5,
-        name:"Todo App(React + Redux)",
-        description:"A todo app build using Redux-toolkit and framer-motion for smooth animations.",
-        tags:["react","redux","framer-motion"],
-        
-        demo:"http://react-redux-todo-app-git-main-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-Redux-Todo-App"
-        
+        name:"Skrollr 활용 패럴렉스 스크롤 애니메이션 효과 구현하기",
+        tags:["HTML","CSS","Javascript","Skrollr"],
+        link:"https://franz0406.github.io/Parallax-Scrolling/"
     },
     {
         id:6,
-        name:"Responsive Navigation Menu",
-        description:"A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
-        tags:["react","react-router","css"],
-        
-        demo:"http://react-responsive-navbar-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-responsive-navbar"
-        
+        name:"로컬스토리지 활용 투두 리스트 만들기",
+        tags:["HTML","SCSS","Javascipt"],
+        link:"https://franz0406.github.io/todo-list/"
+
+    },   
+    {
+        id:7,
+        name:"리액트로 웹사이트 만들기",
+        tags:["HTML","CSS","Javascript","React"],
+        link:"https://franz0406.github.io/gtp3/"
     },
-    
+    {
+        id:8,
+        name:"웹 사이트 스크롤 애니메이션 구현하기",
+        tags:["HTML","CSS","Javascript","WayPoint"],
+        link:"https://franz0406.github.io/waxom/"
+    },
+    {
+        id:9,
+        name:"JQuery 반응형 웹 포트폴리오 사이트 만들기",
+        tags:["HTML","SCSS","JQuery"],
+        link:"https://franz0406.github.io/scroll-load/"
+    },
   
 ] 
