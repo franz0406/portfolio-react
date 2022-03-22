@@ -170,3 +170,22 @@ const Home = ()=> {
 };
 ```
 ===
+### 빈 배열을 만들고 map() 을 활용 값 넣기
+```javascript
+const array = [...Array(20)]; // 인자로 전달한 수 만큼 undefined 의 값이 배열에 들어감.
+array.map( arr => { return <tag>...</tag> })
+```
+===
+## React에서 DOM 다루기 useRef() 기본 사용법 
+1. ref 선언
+```javascript
+const ref = useRef(null);
+```
+2. 접근하고 싶은 태그에 ref속성 넣기.
+```javascript
+<Component ref={ref}/>
+```
+3. DOM 다루기 current는 접근한 태그를 가르킨다.
+```javascript
+const handle = ()=> { ref.current.style.color = 'black'; }
+```
