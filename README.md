@@ -193,7 +193,7 @@ const handle = ()=> { ref.current.style.color = 'black'; }
 ## Particles-js
 1. config 파일 만들기  
 
-`[Particle js](https://vincentgarreau.com/particles.js/) 사이트에 접속해서 스타일 커스터마이징후 config(json)파일 다운  `
+[Particle js](https://vincentgarreau.com/particles.js/) 사이트에 접속해서 스타일 커스터마이징후 config(json)파일 다운  
 
 
 2. particles-js 설치후 컴포넌트 만들기
