@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Particles from 'react-particles-js';
 // particle options file
 import configLight from '../config/particlesjs-config-light.json';
-import configDark from '../config/particlesjs-config.json';
+import configDark from '../config/particlesjs-config-dark.json';
 
 const Container = styled.div`
     position: absolute;

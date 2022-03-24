@@ -29,7 +29,7 @@ const ListContent = styled.li`
     font-family: 'Noto Sans KR', sans-serif;
     border: 2px solid ${props => props.theme.text};
     color: ${props => props.theme.text};
-    background-color: ${props => props.theme.body};
+    background-color: rgba(255,255,255,0.8);
     line-height: 1.4;
     transition: 0.2s linear;
     z-index:3;

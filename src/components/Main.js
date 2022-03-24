@@ -23,7 +23,6 @@ const MainContainer = styled.div`
         font-weight: 500;
     }
 `;
-
 const Container = styled.div`
     padding:2rem;
     > a { /* Link tags Common style */
@@ -33,13 +32,11 @@ const Container = styled.div`
         z-index: 1;
     }
 `;
-
 const WORK = styled(NavLink)`
     color: #000;
     top: 50%; right: 2rem;
     transform: translate(-15%, -50%) rotate(90deg);
 `;
-
 const PORTFOLIO = styled(NavLink)`
     color: ${props => props.active === 'false' ? props.theme.body : props.theme.text };
     top: 50%; left: 2rem;
@@ -47,16 +44,11 @@ const PORTFOLIO = styled(NavLink)`
     transition: ${props => props.active === 'false' ? "0.5s" : "0.5s" };
     transition-delay: ${props => props.active === 'false' ? "1s" : "0s" };
 `;
-
-const ABOUT = styled(NavLink)`
-    color: ${props => props.active === 'false' ? props.theme.body : props.theme.text };
-    bottom: 2rem; left: 25%;
-    transition: ${props => props.active === 'false' ? "0.5s" : "0.5s" };
-    transition-delay: ${props => props.active === 'false' ? "1s" : "0s" };
-`
 const SKILLS = styled(NavLink)`
-    color: #000;
-    bottom: 2rem; right: 25%;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
 `;
 
 const rotate = keyframes`
@@ -146,13 +138,6 @@ const Main = () => {
                         variants={scaleMotion}>PORTFOLIO
                     </motion.h3>
                 </PORTFOLIO>
-                <ABOUT to="/about" active={click.toString()}>
-                    <motion.h3 
-                        whileHover="scaleUp" 
-                        whileTap="scaleDown" 
-                        variants={scaleMotion}>ABOUT
-                    </motion.h3>
-                </ABOUT>
                 <SKILLS to="/skills">
                     <motion.h3 
                         whileHover="scaleUp" 

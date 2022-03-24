@@ -36,6 +36,11 @@ const BoxContent = styled.div`
         padding-bottom: 1vw;
         font-size: 4.5vw;
         font-weight: 600;
+    }
+    strong {
+        display: block;
+        padding-bottom: 0.5rem;
+        font-size: calc(0.8em + 1vw);
     }                
     @media screen and (max-width:450px){
         h3 {
@@ -54,6 +59,7 @@ const Intro = () => {
         >
             <BoxContent>
                 <h3>Web Publisher</h3>
+                <strong>Welcome</strong>
                 <p>React Portfolio Website.</p>
             </BoxContent>
         </Box>
