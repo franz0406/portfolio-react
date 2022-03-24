@@ -190,3 +190,35 @@ const ref = useRef(null);
 const handle = ()=> { ref.current.style.color = 'black'; }
 ```
 ---
+## Particles-js
+1. config 파일 만들기  
+
+[Particle js](https://vincentgarreau.com/particles.js/) 사이트에 접속해서 스타일 커스터마이징후 config(json)파일 다운
+2. particles-js 설치후 컴포넌트 만들기
+```javascript
+import Particles from 'react-particles-js';
+const Particle = () => {
+    return (
+        <Container>
+            <Particles />
+        </Container>
+    );
+    // 크기와 높이를 지정하기 위해 부모 엘리먼트를 만들자.
+};
+```
+3. 다운받은 config(json) 파일 가져오기
+```javascript
+import particlesConfig from 'path/particlesjs-config.json';
+```
+4. 컴포넌트 속성으로 params 에 전달
+```javascript
+import particlesConfig from 'path/particlesjs-config.json';
+const Particle = () => {
+    return (
+        <Container>
+            <Particles params={particlesConfig}/>
+        </Container>
+    );
+};
+```
+
