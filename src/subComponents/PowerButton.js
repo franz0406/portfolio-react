@@ -20,7 +20,7 @@ const Power = styled.button`
     border-radius: 50%;
     border: 2px solid #000;
     cursor: pointer;
-    z-index: 3;
+    z-index: 4;
     transition: 0.1s ease-in-out;
     &:hover {
         transform: translateX(-50%) scale(1.1);
