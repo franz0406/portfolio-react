@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router-dom"
-
+import { useEffect } from "react"
 // 스타일
 import { ThemeProvider } from "styled-components"
 import { lightTheme } from "./styles/Themes"
@@ -12,6 +12,11 @@ import PortfolioPage from './components/PortfolioPage';
 import MySkillsPage from './components/MySkillsPage';
 
 function App() {
+  
+  useEffect(()=>{
+    console.log('%c%s','color: white; background: black; font-size: 14px;','안녕하세요~ (^_^)');
+  }, []);
+
   return <>
 
     <ThemeProvider theme={lightTheme}>

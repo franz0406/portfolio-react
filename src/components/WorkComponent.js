@@ -1,7 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+const orderShow = keyframes`
+    from {
+        opacity:0;
+        transform: scale(0);
+    }
+    to {
+        opacity:1;
+        transform: scale(1);
+    }
+`
 const List = styled.li`
     padding: 2rem;
     list-style:none;
@@ -10,6 +20,10 @@ const List = styled.li`
     box-shadow: 0 0 1rem 0 rgba(0,0,0,0.3);
     z-index:5;
     transition: 0.3s;
+    scale: 0;
+    opacity: 0;
+    animation: ${orderShow} 0.3s ease forwards;
+    animation-delay: ${props => props.delay}s;
     * {
         transition: 0.3s;
     }
@@ -61,7 +75,7 @@ const WorkComponent = ( props ) => {
     const img = props.img; 
 
     return (
-        <List>
+        <List delay={id}>
             <NavLink target="_blank" to={{pathname:link}} key={id}>
                 <img src={img} alt="" />
                 <h2>{name}</h2>

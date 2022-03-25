@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 // images
 import bg from '../assets/Images/blog_bg.jpg';
 import work1 from '../assets/Images/work_01.jpg';
@@ -18,7 +18,20 @@ import PowerButton from '../subComponents/PowerButton';
 import WorkComponent from './WorkComponent';
 // work data
 import { Works } from '../data/WorkData';
-
+const show = keyframes`
+    0% {
+        transform: translateX(100%);
+        opacity:0;
+    }
+    50% {
+        transform: translateX(50%);
+        opacity:0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity:1;
+    }
+`
 const MainContainer = styled.section`
     width: 100%;
     background-image: url(${bg});
@@ -26,6 +39,9 @@ const MainContainer = styled.section`
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    transform: translateX(-100%);
+    opacity:0;
+    animation: ${show} 1s ease forwards;
 `
 const Container = styled.div`
     position: relative;
@@ -39,6 +55,14 @@ const Grid = styled.ul`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: calc(1rem + 2vw);
     text-align:center;
+`
+const BigTitle = styled.h1`
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    color: rgba(0,0,0,0.3);
+    font-size: calc(30px + 10vw);
+    z-index: 0;
 `
 
 
@@ -55,6 +79,7 @@ const BlogPage = () => {
                         return <WorkComponent key={work.id} work={work} img={imgSrc[idx]}/>
                     })}
                 </Grid>
+                <BigTitle>WORK</BigTitle>
             </Container>
         </MainContainer>
     );

@@ -43,6 +43,14 @@ const Title = styled.h3`
     padding-bottom:1rem;
     font-size:calc(1em + 1vw);
 `
+const BigTitle = styled.h1`
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    color: rgba(0,0,0,0.5);
+    font-size: calc(30px + 10vw);
+    z-index: 0;
+`
 
 const MySkillsPage = () => {
     return (
@@ -69,6 +77,7 @@ const MySkillsPage = () => {
                         <p>퍼블리싱 작업을 위한 기본적인 기능들을 다룰수 있습니다.</p>
                     </ListContent>
                 </Lists>
+                <BigTitle>SKILLS</BigTitle>
             </Container>
         </ThemeProvider>
     );

@@ -17,6 +17,19 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Source Sans Pro',sans-serif;
     }
 
+    html::-webkit-scrollbar {
+        width: 10px;
+    }
+    html::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        background-clip: padding-box;
+        border:2px solid transparent;
+    }
+    html::-webkit-scrollbar-track {
+        background-color: #000;
+    }
+
 `
 
 export default GlobalStyle;
